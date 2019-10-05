@@ -11,7 +11,8 @@ export class WithOptionsComponent implements OnInit {
 
   ngOnInit(): void {
     this.dtOptions = {
-      pagingType: 'full_numbers'
+      pagingType: 'full_numbers',
+      columnDefs: [{ targets: 3, type: 'date' }]
     };
   }
 
