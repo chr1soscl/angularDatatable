@@ -23,8 +23,14 @@ export class WithOptionsComponent implements OnInit {
       order: [[1, 'asc']],
       dom: 'Bfrtip',
       buttons: [
-        'copy', 'excel', 'pdf', 'columnsToggle', 'colvis'
-      ]
+        //'selected',
+        //'selectedSingle',
+        'selectAll',
+        'selectNone',
+        //'selectRows',
+        //'selectColumns',
+        //'selectCells'
+      ],
 
     };
   }
