@@ -21,7 +21,7 @@ export class WithOptionsComponent implements OnInit {
       }],
       select: { style: 'multi' },
       order: [[1, 'asc']],
-      dom: 'Bfrtip',
+      //dom: 'Bfrtip',
       buttons: [
         //'selected',
         //'selectedSingle',
