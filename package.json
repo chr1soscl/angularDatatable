@@ -24,6 +24,7 @@
     "@angular/router": "~8.2.9",
     "angular-datatables": "^8.0.0",
     "bootstrap": "^4.5.3",
+    "express": "^4.16.4",
     "datatables.net": "^1.10.20",
     "datatables.net-bs4": "^1.10.22",
     "datatables.net-buttons": "^1.6.0",
