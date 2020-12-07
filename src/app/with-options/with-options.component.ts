@@ -29,7 +29,7 @@ export class WithOptionsComponent implements OnInit {
       scrollX: true,
       //select: { style: 'multi' },
       order: [[1, 'asc']],
-      dom: 'lftpr', //B
+      dom: 'ftlp', //B
       buttons: [
         //'selected',
         //'selectedSingle',
