@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-with-options',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WithOptionsComponent implements OnInit {
 
+  @Input() columns:String[];
+
   dtOptions: any = {
 
   };
@@ -14,14 +16,17 @@ export class WithOptionsComponent implements OnInit {
   ngOnInit(): void {
     this.dtOptions = {
       pagingType: 'full_numbers',
-      columnDefs: [{ targets: 4, type: 'date' }, {
-        orderable: false,
-        className: 'select-checkbox',
-        targets: 0
-      }],
+      columnDefs: [
+        { targets: 4, 
+          type: 'date' }, 
+        {
+          orderable: false,
+          className: 'select-checkbox',
+          targets: 0
+        }],
       select: { style: 'multi' },
       order: [[1, 'asc']],
-      //dom: 'Bfrtip',
+      dom: 'Bftlpr',
       buttons: [
         //'selected',
         //'selectedSingle',

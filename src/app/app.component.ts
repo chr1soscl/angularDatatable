@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularDatatable';
+  columns=[
+    "ID",
+    "First name",
+    "Last name",
+    "DOB"
+  ];
 }
