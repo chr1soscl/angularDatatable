@@ -25,6 +25,7 @@ export class WithOptionsComponent implements OnInit {
           className: 'select-checkbox',
           targets: 0
         }],
+      scrollX: true,
       select: { style: 'multi' },
       order: [[1, 'asc']],
       dom: 'Bftlpr',
