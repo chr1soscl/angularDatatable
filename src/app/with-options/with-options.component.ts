@@ -8,6 +8,7 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 export class WithOptionsComponent implements OnInit {
 
   @Input() columns:String[];
+  @Input() data:any[];
 
   dtOptions: any = {
 
