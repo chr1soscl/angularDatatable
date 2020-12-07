@@ -15,7 +15,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let record of data">
-                <td></td>
+                <td><input type="checkbox"/></td>
                 <td *ngFor="let column of columns"> {{record[column]}} </td>
             </tr>
         </tbody>

@@ -22,13 +22,14 @@ export class WithOptionsComponent implements OnInit {
           type: 'date' }, 
         {
           orderable: false,
-          className: 'select-checkbox',
+          //className: 'select-checkbox',
           targets: 0
-        }],
+        }
+      ],
       scrollX: true,
-      select: { style: 'multi' },
+      //select: { style: 'multi' },
       order: [[1, 'asc']],
-      dom: 'Bftlpr',
+      dom: 'lftpr', //B
       buttons: [
         //'selected',
         //'selectedSingle',
