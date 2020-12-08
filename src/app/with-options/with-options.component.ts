@@ -13,7 +13,7 @@ export class WithOptionsComponent implements OnInit {
 
   constructor(){}
 
-  dtOptions: DataTables.Settings = {};
+  dtOptions: any = {};
 
   someClickHandler(info: any): void {
     console.log("this.message>",info);
@@ -27,14 +27,15 @@ export class WithOptionsComponent implements OnInit {
           type: 'date' }, 
         {
           orderable: false,
-          //className: 'select-checkbox',
+          className: 'select-checkbox',
           targets: 0
         }
       ],
       scrollX: true,
-      //select: { style: 'multi' },
+      select: { style: 'multi' },
       order: [[1, 'asc']],
-      dom: "<ft><'row'<'col-sm col-md'l><'col-sm col-md'p>>",
+      dom: "<Bft><'row'<'col-sm col-md'l><'col-sm col-md'p>>",
+      buttons:['selectAll','selectNone'],
       rowCallback: (row: Node, data: any[] | Object, index: number) => {
         console.log("rowCallBack");
         const self = this;
@@ -42,6 +43,7 @@ export class WithOptionsComponent implements OnInit {
         // (see https://github.com/l-lin/angular-datatables/issues/87)
         $('td', row).unbind('click');
         $('td', row).bind('click', () => {
+          console.log("row>",row);
           self.someClickHandler(data);
         });
         return row;

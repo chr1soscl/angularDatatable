@@ -9,13 +9,13 @@
         </tfoot>-->
         <thead>
             <tr>
-                <th><input type="checkbox"/></th>
+                <th></th>
                 <th *ngFor="let column of columns"> {{column}} </th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let record of data">
-                <td><input type="checkbox"/></td>
+                <td></td>
                 <td *ngFor="let column of columns"> {{record[column]}} </td>
             </tr>
         </tbody>
