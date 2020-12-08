@@ -9,10 +9,15 @@ export class WithOptionsComponent implements OnInit {
 
   @Input() columns:String[];
   @Input() data:any[];
+  message="";
 
-  dtOptions: any = {
+  constructor(){}
 
-  };
+  dtOptions: DataTables.Settings = {};
+
+  someClickHandler(info: any): void {
+    console.log("this.message>",info);
+  }
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -30,14 +35,14 @@ export class WithOptionsComponent implements OnInit {
       //select: { style: 'multi' },
       order: [[1, 'asc']],
       dom: "<ft><'row'<'col-sm col-md'l><'col-sm col-md'p>>",
-      rowCallBack: (row: Node, data: any[] | Object, index: number) => {
+      rowCallback: (row: Node, data: any[] | Object, index: number) => {
+        console.log("rowCallBack");
         const self = this;
-        console.log("this callback>",self);
         // Unbind first in order to avoid any duplicate handler
         // (see https://github.com/l-lin/angular-datatables/issues/87)
         $('td', row).unbind('click');
         $('td', row).bind('click', () => {
-          console.log(data);
+          self.someClickHandler(data);
         });
         return row;
       }
