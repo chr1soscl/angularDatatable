@@ -29,9 +29,20 @@ export class WithOptionsComponent implements OnInit {
       scrollX: true,
       //select: { style: 'multi' },
       order: [[1, 'asc']],
-      dom: "<ft><'row'<'col-sm col-md'l><'col-sm col-md'p>>"
-
+      dom: "<ft><'row'<'col-sm col-md'l><'col-sm col-md'p>>",
+      rowCallBack: (row: Node, data: any[] | Object, index: number) => {
+        const self = this;
+        console.log("this callback>",self);
+        // Unbind first in order to avoid any duplicate handler
+        // (see https://github.com/l-lin/angular-datatables/issues/87)
+        $('td', row).unbind('click');
+        $('td', row).bind('click', () => {
+          console.log(data);
+        });
+        return row;
+      }
     };
+    console.log("dtOptions>",this.dtOptions);
   }
 
 }
